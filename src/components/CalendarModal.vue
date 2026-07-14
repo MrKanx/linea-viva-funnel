@@ -429,6 +429,10 @@ watch(() => props.open, (v) => {
   font-weight: 700;
   color: colors.$QS-DARK;
   margin-bottom: 0.75rem;
+  background: colors.$QS-SURFACE;
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  margin-left: -0.5rem;
 
   &--budget {
     gap: 0.4rem;

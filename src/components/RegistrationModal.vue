@@ -147,8 +147,8 @@ const validators: Record<string, (v: string) => string | null> = {
   apellido: v => v.trim().length < 2 ? 'Ingresa tu apellido' : null,
   email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? null : 'Email inválido',
   phone: () => phoneValid.value ? null : 'Número inválido para el país seleccionado',
-  empresa: v => v.trim().length < 2 ? 'Ingresa tu programa de interés' : null,
-  urgencia: v => !v ? 'Selecciona cuándo planeas viajar' : null,
+  empresa: v => v.trim().length < 2 ? 'Ingresa el tipo de proyecto' : null,
+  urgencia: v => !v ? 'Selecciona cuándo planeas iniciar' : null,
 }
 
 const validate = () => {
@@ -410,12 +410,12 @@ watch(dropdownOpen, open => {
 
             <!-- Empresa / Interés -->
             <div class="rmodal__field" :class="{ 'has-error': touched.empresa && errors.empresa }">
-              <label for="r-empresa">Programa o carrera de interés</label>
+              <label for="r-empresa">¿Qué tipo de proyecto tienes en mente?</label>
               <input
                 id="r-empresa"
                 v-model="form.empresa"
                 type="text"
-                placeholder="Ej: Máster en Marketing"
+                placeholder="Ej: Remodelación de casa, construcción de local..."
                 autocomplete="organization"
                 @blur="onBlur('empresa')"
               />

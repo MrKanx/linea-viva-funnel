@@ -44,12 +44,12 @@ const nextSteps = [
   {
     icon: 'fa-brands fa-whatsapp',
     title: 'Te contactamos por WhatsApp',
-    body: 'El equipo de STUDENTS2MADRID te escribirá para confirmar la cita y enviarte el enlace.',
+    body: 'El equipo de Línea Viva te escribirá para confirmar la cita y enviarte el enlace o coordinar la visita.',
   },
   {
     icon: 'fa-solid fa-file-invoice',
     title: 'Prepara tus dudas',
-    body: 'Anota todas las preguntas sobre el proceso, universidades o visado para aprovecharlas en la sesión.',
+    body: 'Anota todas las preguntas sobre tu proyecto, espacios o presupuesto para aprovecharlas en la sesión.',
   },
 ]
 </script>
@@ -58,7 +58,7 @@ const nextSteps = [
   <div class="booked">
 
     <header class="booked__topbar">
-      <span class="booked__logo-text">STUDENTS<span class="booked__logo-accent">2MADRID</span></span>
+      <span class="booked__logo-text">LÍNEA<span class="booked__logo-accent">VIVA</span></span>
     </header>
 
     <main class="booked__main">
@@ -82,7 +82,7 @@ const nextSteps = [
             </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión de asesoría con STUDENTS2MADRID está confirmada. Revisa tu correo
+            Tu sesión inicial con Línea Viva está confirmada. Revisa tu correo
             o WhatsApp para todos los detalles. Si necesitas reagendar, escríbenos.
           </p>
         </template>
@@ -97,7 +97,7 @@ const nextSteps = [
             </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión con el equipo de STUDENTS2MADRID ha sido agendada correctamente.
+            Tu sesión con el equipo de Línea Viva ha sido agendada correctamente.
             En breve recibirás todos los detalles para conectarte.
           </p>
         </template>
@@ -124,7 +124,7 @@ const nextSteps = [
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} STUDENTS2MADRID. Todos los derechos reservados.</p>
+      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} LÍNEA VIVA. Todos los derechos reservados.</p>
       <p class="booked__footer-dev">Hecho por <a href="https://github.com/MrKanx" target="_blank" rel="noopener noreferrer">Kankox</a></p>
     </footer>
 
@@ -137,22 +137,22 @@ const nextSteps = [
 
 .booked {
   min-height: 100vh;
-  background: #000000;
-  color: #ffffff;
+  background: colors.$QS-LIGHT;
+  color: colors.$QS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .booked__topbar {
-  background: #000000;
-  border-bottom: 1px solid #222222;
+  background: colors.$QS-LIGHT;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
 .booked__logo-text {
@@ -160,7 +160,7 @@ const nextSteps = [
   font-weight: 900;
   font-size: 1.25rem;
   letter-spacing: -0.5px;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0;
 }
 
@@ -182,9 +182,10 @@ const nextSteps = [
 .booked__hero {
   text-align: center;
   padding: 2.5rem 2rem;
-  background: #000000;
-  border: 1px solid #333333;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .booked__hero-icon {
@@ -198,9 +199,9 @@ const nextSteps = [
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(colors.$S2M-GOLD, 0.14);
-  color: colors.$S2M-GOLD;
-  border: 1px solid rgba(colors.$S2M-GOLD, 0.3);
+  background: rgba(colors.$S2M-GOLD, 0.1);
+  color: colors.$S2M-DARK-BLUE;
+  border: 1px solid rgba(colors.$S2M-GOLD, 0.2);
   border-radius: 999px;
   padding: 0.4rem 0.95rem;
   margin: 0 0 0.85rem;
@@ -218,14 +219,14 @@ const nextSteps = [
 .booked__hero-title {
   @include fonts.heading-font(800);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0 0 0.75rem;
   letter-spacing: -0.025em;
 }
 
 .booked__hero-subtitle {
   font-size: 1rem;
-  color: #a0aec0;
+  color: #4B5563;
   line-height: 1.65;
   margin: 0 auto;
   max-width: 460px;
@@ -253,12 +254,12 @@ const nextSteps = [
 }
 
 .booked__step {
-  background: #111111;
-  border: 1px solid #333333;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   position: relative;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .booked__step-num {
@@ -267,7 +268,7 @@ const nextSteps = [
   right: 1rem;
   @include fonts.heading-font(800);
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(0, 0, 0, 0.04);
   line-height: 1;
   user-select: none;
 }
@@ -276,7 +277,8 @@ const nextSteps = [
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: colors.$S2M-DARK-BLUE;
+  background: colors.$QS-LIGHT;
+  border: 1px solid rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,20 +293,20 @@ const nextSteps = [
 .booked__step-title {
   @include fonts.heading-font(700);
   font-size: 0.93rem;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0 0 0.4rem;
 }
 
 .booked__step-body {
   font-size: 0.85rem;
-  color: #a0aec0;
+  color: #4B5563;
   line-height: 1.5;
   margin: 0;
 }
 
 .booked__footer {
   padding: 1.5rem;
-  border-top: 1px solid #222222;
+  border-top: 1px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,7 +319,7 @@ const nextSteps = [
 
     a {
       font-size: 0.76rem;
-      color: #a0aec0;
+      color: #6B7280;
       text-decoration: none;
 
       &:hover {
@@ -328,17 +330,17 @@ const nextSteps = [
 
   &-copy {
     font-size: 0.72rem;
-    color: #718096;
+    color: #9CA3AF;
     margin: 0;
   }
   
   &-dev {
     font-size: 0.72rem;
-    color: #4a5568;
+    color: #9CA3AF;
     margin: 0;
     
     a {
-      color: #718096;
+      color: #6B7280;
       text-decoration: none;
       font-weight: bold;
       

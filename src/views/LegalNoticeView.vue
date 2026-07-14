@@ -18,10 +18,10 @@ onMounted(() => {
 
       <main class="legal-card__content">
         <p class="legal-card__text">
-          Este sitio web es operado por <strong>NOVAERA</strong>. Toda la información, contenidos y servicios disponibles en esta plataforma tienen un carácter estrictas y exclusivamente informativo y comercial.
+          Este sitio web es operado por <strong>Línea Viva</strong>. Toda la información, contenidos y servicios disponibles en esta plataforma tienen un carácter estricta y exclusivamente informativo y comercial.
         </p>
         <p class="legal-card__text">
-          El agendamiento o solicitud de un diagnóstico gratuito de infraestructura comercial no constituye ni garantiza el inicio de una relación de contratación de obra o servicios formal, la cual requerirá en todo caso la firma de un contrato físico o de un acuerdo de servicios explícito por ambas partes.
+          El agendamiento o solicitud de una sesión inicial o evaluación de proyecto no constituye ni garantiza el inicio de una relación de contratación de obra o servicios formal, la cual requerirá en todo caso la firma de un contrato físico o de un acuerdo de servicios explícito por ambas partes.
         </p>
       </main>
 
@@ -40,7 +40,7 @@ onMounted(() => {
 
 .legal-page {
   min-height: 100vh;
-  background: #000000;
+  background: colors.$QS-LIGHT;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,11 +50,11 @@ onMounted(() => {
 .legal-card {
   width: 100%;
   max-width: 580px;
-  background: #111111;
-  border: 1px solid #222222;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 480px) {
     padding: 1.75rem;
@@ -63,7 +63,7 @@ onMounted(() => {
   &__title {
     @include fonts.heading-font(800);
     font-size: 1.8rem;
-    color: #ffffff;
+    color: colors.$QS-DARK;
     text-align: center;
     margin: 0 0 1.5rem;
     letter-spacing: -0.02em;
@@ -83,11 +83,11 @@ onMounted(() => {
   &__text {
     font-size: 0.92rem;
     line-height: 1.6;
-    color: #cccccc;
+    color: #4B5563;
     margin: 0;
 
     strong {
-      color: #ffffff;
+      color: colors.$QS-DARK;
     }
   }
 
@@ -106,7 +106,7 @@ onMounted(() => {
   &__footer {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #222222;
+    border-top: 1px solid rgba(0,0,0,0.05);
     padding-top: 1.5rem;
   }
 
@@ -115,8 +115,8 @@ onMounted(() => {
     align-items: center;
     gap: 0.5rem;
     background: transparent;
-    border: 1px solid #444444;
-    color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: colors.$QS-DARK;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-family: fonts.$font-interface;
@@ -126,8 +126,8 @@ onMounted(() => {
     transition: background 0.2s, border-color 0.2s;
 
     &:hover {
-      background: #222222;
-      border-color: #666666;
+      background: rgba(0,0,0,0.05);
+      border-color: rgba(0,0,0,0.15);
     }
 
     i {

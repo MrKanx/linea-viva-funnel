@@ -1,19 +1,19 @@
-// STUDENTS2MADRID / Premium Education Colors
-$S2M-DARK-BLUE:   #0F172A; // Trust, Professionalism (Tailwind slate-900)
-$S2M-GOLD:        #D4AF37; // Exclusivity, Success (Soft Gold)
-$S2M-WHITE:       #FFFFFF; // Clarity
-$S2M-GRAY-LIGHT:  #F8FAFC; // Modern Gray Light (Tailwind slate-50)
-$S2M-GRAY-DARK:   #334155; // Modern Gray Dark (Tailwind slate-700)
-$S2M-ACCENT:      #2563EB; // Accent Blue (Tailwind blue-600)
+// LINEA VIVA / Construction & Remodeling Colors
+$S2M-DARK-BLUE:   #1F2937; // Charcoal Text (was Dark Blue)
+$S2M-GOLD:        #C28F59; // Earthy accent (Warm Wood / Terracotta)
+$S2M-WHITE:       #FFFFFF; // Clarity (Surfaces)
+$S2M-GRAY-LIGHT:  #F9FAFB; // Warm Off-White (Backgrounds)
+$S2M-GRAY-DARK:   #E5E7EB; // Light Borders
+$S2M-ACCENT:      #4A5D4E; // Muted Sage Green / Architecture Green
 
 // Mapeo a las variables del sistema (manteniendo los nombres para no romper UI legacy de ser necesario)
-$QS-NAVY:    $S2M-DARK-BLUE;  // Brand Principal (Azul oscuro)
-$QS-BLUE:    $S2M-ACCENT;     // Secundario (Azul acento)
-$QS-GOLD:    $S2M-GOLD;       // Acento (Dorado)
-$QS-RED:     $S2M-GOLD;       // CTAs y urgencia (Dorado para CTA principal)
-$QS-DARK:    $S2M-WHITE;      // Texto claro (modo oscuro)
-$QS-LIGHT:   $S2M-DARK-BLUE;  // Fondo oscuro base
-$QS-SURFACE: #1E293B;         // Superficies/cards oscuras
+$QS-NAVY:    $S2M-DARK-BLUE;  // Text/Brand
+$QS-BLUE:    $S2M-ACCENT;     // Secundario
+$QS-GOLD:    $S2M-GOLD;       // Acento
+$QS-RED:     $S2M-GOLD;       // CTAs
+$QS-DARK:    $S2M-DARK-BLUE;  // Texto principal
+$QS-LIGHT:   $S2M-GRAY-LIGHT; // Fondo principal
+$QS-SURFACE: $S2M-WHITE;      // Superficies/cards claras
 
 // Urgency / inmediatez
 $QS-URGENT:        #B45309; // Amber-700
@@ -62,8 +62,8 @@ $OS-DARK:  $QS-DARK;
 
 // Colores base
 $white: #ffffff;
-$text-light: #f5f5f5;
-$overlay-wood: rgba($QS-NAVY, 0.1);
+$text-light: $S2M-DARK-BLUE; // Mantenemos el nombre pero invertimos el uso para texto
+$overlay-wood: rgba($S2M-GOLD, 0.05);
 
 // Colores adicionales para UI
 $gray-100: #f8f9fa;

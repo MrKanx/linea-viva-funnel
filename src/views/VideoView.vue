@@ -99,7 +99,7 @@ onMounted(() => {
     document.head.appendChild(script1)
     
     const script2 = document.createElement('script')
-    script2.src = 'https://fast.wistia.com/embed/xr33vaq36h.js'
+    script2.src = 'https://fast.wistia.com/embed/qlg8athp0s.js'
     script2.type = 'module'
     script2.async = true
     document.head.appendChild(script2)
@@ -113,7 +113,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   <div class="vv-page">
 
     <header class="vv-topbar">
-      <span class="vv-topbar__logo-text">STUDENTS<span class="vv-topbar__logo-accent">2MADRID</span></span>
+      <span class="vv-topbar__logo-text">LÍNEA<span class="vv-topbar__logo-accent">VIVA</span></span>
     </header>
 
     <main class="vv-main">
@@ -128,18 +128,18 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
       <section class="vv-headline">
         <h1 class="vv-h1">
-          Descubre por qué cientos de estudiantes
-          <span class="vv-accent">eligen a STUDENTS2MADRID</span>
+          Descubre por qué cientos de clientes
+          <span class="vv-accent">eligen Línea Viva 360</span>
         </h1>
         <p class="vv-subtitle">
-          Ve el video completo y descubre cómo asegurar tu futuro académico,
-          ahorrar tiempo en trámites y llegar a Madrid con total confianza.
+          Ve el video completo y descubre cómo construir o remodelar sin complicaciones,
+          ahorrar tiempo y dinero, y asegurar un acabado de alto nivel.
         </p>
       </section>
 
       <div class="vv-video-wrapper">
         <div class="vv-video-ratio">
-          <wistia-player media-id="xr33vaq36h" aspect="1.7777777777777777"></wistia-player>
+          <wistia-player media-id="qlg8athp0s" aspect="1.7777777777777777"></wistia-player>
         </div>
       </div>
 
@@ -183,7 +183,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} STUDENTS2MADRID. Todos los derechos reservados.</p>
+      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} LÍNEA VIVA. Todos los derechos reservados.</p>
       <p class="vv-footer__dev">Hecho por <a href="https://github.com/MrKanx" target="_blank" rel="noopener noreferrer">Kankox</a></p>
     </footer>
 
@@ -200,7 +200,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
-            <p class="capture-modal__sub">Para personalizar tu asesoría internacional</p>
+            <p class="capture-modal__sub">Para personalizar el análisis de tu proyecto</p>
           </div>
           <form class="capture-modal__form" @submit.prevent="submitCapture" novalidate>
             <div class="capture-row">
@@ -248,29 +248,29 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-page {
   min-height: 100vh;
-  background: #000000;
-  color: #ffffff;
+  background: colors.$QS-LIGHT;
+  color: colors.$QS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .vv-topbar {
-  background: #000000;
-  border-bottom: 1px solid #222222;
+  background: colors.$QS-LIGHT;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 
   &__logo-text {
     font-family: fonts.$font-principal;
     font-weight: 900;
     font-size: 1.25rem;
     letter-spacing: -0.5px;
-    color: #ffffff;
+    color: colors.$QS-DARK;
     margin: 0;
   }
 
@@ -296,17 +296,18 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #111111;
-    border: 1px solid #333333;
+    background: colors.$QS-SURFACE;
+    border: 1px solid rgba(0,0,0,0.05);
     border-radius: 999px;
     padding: 0.4rem 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
   }
 
   &__dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #444;
+    background: colors.$S2M-GRAY-DARK;
     transition: background 0.2s;
 
     &--active {
@@ -318,7 +319,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #CCCCCC;
+    color: #6B7280;
     letter-spacing: 0.03em;
   }
 }
@@ -332,7 +333,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   font-family: fonts.$font-principal;
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: #ffffff;
+  color: colors.$QS-DARK;
   line-height: 1.2;
   margin: 0 0 1rem;
   letter-spacing: -0.025em;
@@ -344,7 +345,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-subtitle {
   font-size: 1.1rem;
-  color: #a0aec0;
+  color: #4B5563;
   line-height: 1.5;
   margin: 0 auto;
   max-width: 650px;
@@ -359,9 +360,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  border: 1px solid #333333;
-  background: #111;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+  background: colors.$QS-SURFACE;
 
   wistia-player {
     display: block;
@@ -369,7 +370,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     height: 100%;
 
     &:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xr33vaq36h/swatch');
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/qlg8athp0s/swatch');
       display: block;
       filter: blur(5px);
       padding-top: 56.25%;
@@ -399,19 +400,20 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     gap: 0.6rem;
     width: 100%;
     padding: 1rem 1.5rem;
-    background: #111111;
-    border: 1px solid #2a2a2a;
+    background: colors.$QS-SURFACE;
+    border: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
 
   &__icon {
     font-size: 1rem;
-    color: #888888;
+    color: #9CA3AF;
   }
 
   &__text {
     font-size: 0.95rem;
-    color: #CCCCCC;
+    color: #4B5563;
     margin: 0;
     font-family: fonts.$font-secondary;
 
@@ -429,7 +431,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   justify-content: center;
   gap: 0.8rem;
   background: colors.$S2M-GOLD;
-  color: #000000;
+  color: colors.$QS-SURFACE;
   border: none;
   border-radius: 12px;
   padding: 1.25rem 2.5rem;
@@ -455,9 +457,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   }
 
   &--disabled {
-    background: linear-gradient(to right, rgba(212, 154, 30, 0.3) var(--fill, 0%), #111111 var(--fill, 0%)) !important;
-    color: #888888 !important;
-    border: 1px solid #333333 !important;
+    background: linear-gradient(to right, rgba(194, 143, 89, 0.3) var(--fill, 0%), colors.$QS-SURFACE var(--fill, 0%)) !important;
+    color: #9CA3AF !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
     box-shadow: none !important;
     cursor: not-allowed !important;
     transform: none !important;
@@ -465,13 +467,13 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     overflow: hidden;
 
     &:hover {
-      background: linear-gradient(to right, rgba(212, 154, 30, 0.3) var(--fill, 0%), #111111 var(--fill, 0%)) !important;
+      background: linear-gradient(to right, rgba(194, 143, 89, 0.3) var(--fill, 0%), colors.$QS-SURFACE var(--fill, 0%)) !important;
       transform: none !important;
       box-shadow: none !important;
     }
 
     i {
-      color: #888888;
+      color: #9CA3AF;
     }
   }
 }
@@ -481,7 +483,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
-  color: #a0aec0;
+  color: #6B7280;
   margin: 0;
 
   i {
@@ -492,7 +494,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-footer {
   padding: 1.5rem;
-  border-top: 1px solid #222222;
+  border-top: 1px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -504,7 +506,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
     a {
       font-size: 0.8rem;
-      color: #a0aec0;
+      color: #6B7280;
       text-decoration: none;
 
       &:hover {
@@ -515,17 +517,17 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__copy {
     font-size: 0.75rem;
-    color: #718096;
+    color: #9CA3AF;
     margin: 0;
   }
 
   &__dev {
     font-size: 0.75rem;
-    color: #4a5568;
+    color: #9CA3AF;
     margin: 0;
     
     a {
-      color: #718096;
+      color: #6B7280;
       text-decoration: none;
       font-weight: bold;
       
@@ -551,7 +553,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   position: fixed;
   inset: 0;
   z-index: 950;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -560,25 +562,25 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 }
 
 .capture-modal {
-  background: #000000;
+  background: colors.$QS-SURFACE;
   border-radius: 20px;
   width: 100%;
   max-width: 460px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-  border: 1px solid #333333;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0,0,0,0.05);
 
   &__header {
     padding: 2rem 2rem 1.25rem;
     text-align: center;
-    border-bottom: 1px solid #222222;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
   &__title {
     font-family: fonts.$font-principal;
     font-size: 1.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: colors.$QS-DARK;
     margin: 0 0 0.5rem;
     letter-spacing: -0.02em;
 
@@ -589,7 +591,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__sub {
     font-size: 0.9rem;
-    color: #a0aec0;
+    color: #4B5563;
     margin: 0;
   }
 
@@ -620,28 +622,28 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: colors.$QS-DARK;
     letter-spacing: 0.02em;
   }
 
   input {
-    border: 1.5px solid #333333;
+    border: 1.5px solid rgba(0,0,0,0.1);
     border-radius: 9px;
     padding: 0.8rem 1rem;
     font-family: fonts.$font-secondary;
     font-size: 0.9rem;
-    color: #FFFFFF;
-    background: #111111;
+    color: colors.$QS-DARK;
+    background: colors.$QS-LIGHT;
     outline: none;
     transition: all 0.2s ease;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.35);
+      color: #9CA3AF;
     }
 
     &:focus {
       border-color: colors.$S2M-GOLD;
-      background: #1a1a1a;
+      background: colors.$QS-SURFACE;
     }
   }
 
@@ -661,7 +663,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   justify-content: center;
   gap: 0.6rem;
   background: colors.$S2M-GOLD;
-  color: #000000;
+  color: colors.$QS-SURFACE;
   border: none;
   border-radius: 11px;
   padding: 1.1rem 1.5rem;

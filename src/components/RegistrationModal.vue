@@ -76,7 +76,7 @@ const urgencyOpts: { value: Exclude<Urgency, ''>; label: string; sub: string; ho
 ]
 
 function calcTags(urgency: Urgency): string[] {
-  const base = ['STUDENTS2MADRID', 'funnel-registro']
+  const base = ['Línea Viva', 'funnel-registro']
   if (urgency === 'inmediato')    return [...base, 'urgente', 'contrato-inmediato']
   if (urgency === 'proximos')     return [...base, 'urgencia-media']
   if (urgency === 'planificando') return [...base, 'planificando']
@@ -89,14 +89,14 @@ function buildNote(f: typeof form.value, country: string, pageDuration: number):
   const secs = pageDuration % 60
   return [
     '━━━━━━━━━━━━━━━━━━━━━━━━',
-    'STUDENTS2MADRID — Registro Inicial',
+    'LÍNEA VIVA — Registro Inicial',
     '━━━━━━━━━━━━━━━━━━━━━━━━',
     `👤 ${f.nombre} ${f.apellido}`,
     `📧 ${f.email}`,
-    `📱 ${f.phone}`,
-    `🎓 Programa/Interés: ${f.empresa}`,
-    `⏱ Viaje: ${f.urgencia ? URGENCY_LABEL[f.urgencia] : '—'}`,
     `🌎 País: ${country}`,
+    `⏳ Tiempo en página: ${mins}m ${secs}s`,
+    '━━━━━━━━━━━━━━━━━━━━━━━━',
+    '✅ Paso 1 — Registro completado',
     `⏳ Tiempo en página: ${mins}m ${secs}s`,
     '━━━━━━━━━━━━━━━━━━━━━━━━',
     '✅ Paso 1 — Registro completado',
@@ -223,15 +223,15 @@ const handleSubmit = async () => {
     notas: buildNote(form.value, selectedCountry.value.name, pageDur),
     nota: buildNote(form.value, selectedCountry.value.name, pageDur),
     pageDuration: pageDur,
-    source: 'STUDENTS2MADRID-web',
+    source: 'LINEA-VIVA-web',
     timestamp: new Date().toISOString(),
     event_id: leadEventId,
     ...getStoredFbParams(),
   }
 
-  console.info('[STUDENTS2MADRID Registro]', payload)
+  console.info('[LINEA VIVA Registro]', payload)
 
-  const webhookUrl = import.meta.env.VITE_WEBHOOK_REGISTRO ?? 'https://services.leadconnectorhq.com/hooks/fEMLLNjtxgizyNARamWS/webhook-trigger/7bXLoKVZdu1Ndir59NZ0'
+  const webhookUrl = import.meta.env.VITE_WEBHOOK_REGISTRO ?? 'https://services.leadconnectorhq.com/hooks/kRY63aQkg8qTWBUbwreY/webhook-trigger/oANJcBb9A0xv0AGpeeoU'
   await fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -309,9 +309,9 @@ watch(dropdownOpen, open => {
           </button>
 
           <div class="rmodal__header">
-            <p class="rmodal__eyebrow">ESTUDIOS EN ESPAÑA</p>
-            <h2 id="rmodal-title" class="rmodal__title">Accede al entrenamiento<br><span class="rmodal__title-accent">gratuito</span></h2>
-            <p class="rmodal__subtitle">Descubre el Método Rumbo a España para blindar tu futuro académico.</p>
+            <p class="rmodal__eyebrow">CONSTRUCCIÓN Y REMODELACIÓN</p>
+            <h2 id="rmodal-title" class="rmodal__title">Accede al video<br><span class="rmodal__title-accent">gratuito</span></h2>
+            <p class="rmodal__subtitle">Descubre el Método Línea Viva 360 para tu proyecto.</p>
           </div>
 
           <form class="rmodal__form" @submit.prevent="handleSubmit" novalidate>
@@ -425,8 +425,8 @@ watch(dropdownOpen, open => {
             <!-- Urgencia -->
             <div class="rmodal__field rmodal__field--urgency" :class="{ 'has-error': touched.urgencia && errors.urgencia }">
               <label class="rmodal__urgency-label">
-                <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
-                ¿Cuándo planeas viajar a España?
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                ¿Cuándo planeas iniciar tu proyecto?
               </label>
               <div class="rmodal__urgency-opts" role="radiogroup">
                 <label
@@ -479,12 +479,12 @@ watch(dropdownOpen, open => {
 @use '@/styles/colorVariables.module.scss' as colors;
 @use '@/styles/fonts.modules.scss' as fonts;
 
-$bg: #000000;
-$border: rgba(colors.$OS-NAVY, 0.1);
-$input-bg: #111111;
-$text-muted: #7a8ea5;
-$text-body: #3a4f6a;
-$accent: colors.$OS-RED;
+$bg: colors.$QS-SURFACE;
+$border: rgba(0,0,0, 0.1);
+$input-bg: colors.$QS-LIGHT;
+$text-muted: #6B7280;
+$text-body: #4B5563;
+$accent: colors.$S2M-GOLD;
 
 .rmodal-overlay {
   position: fixed;
@@ -554,7 +554,7 @@ $accent: colors.$OS-RED;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.18;
-  color: colors.$OS-DARK;
+  color: colors.$QS-DARK;
   margin: 0 0 8px;
 }
 
@@ -589,7 +589,7 @@ $accent: colors.$OS-RED;
     font-family: fonts.$font-interface;
     font-size: 0.74rem;
     font-weight: 600;
-    color: #FFFFFF;
+    color: colors.$QS-DARK;
     letter-spacing: 0.5px;
   }
 
@@ -602,10 +602,10 @@ $accent: colors.$OS-RED;
     padding: 11px 14px;
     font-family: fonts.$font-secondary;
     font-size: 0.92rem;
-    color: colors.$OS-DARK;
+    color: colors.$QS-DARK;
     outline: none;
     transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    &::placeholder { color: rgba(255, 255, 255, 0.35); }
+    &::placeholder { color: #9CA3AF; }
     &:focus { border-color: rgba($accent, 0.5); background: rgba($accent, 0.04); box-shadow: 0 0 0 3px rgba($accent, 0.08); }
   }
 
@@ -641,7 +641,7 @@ $accent: colors.$OS-RED;
   border: none;
   border-right: 1px solid $border;
   cursor: pointer;
-  color: colors.$white;
+  color: colors.$QS-DARK;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background 0.15s;
@@ -651,7 +651,7 @@ $accent: colors.$OS-RED;
 
 .rmodal__flag { font-size: 1.1rem; line-height: 1; }
 
-.rmodal__dial { font-family: fonts.$font-accent; font-size: 0.82rem; font-weight: 600; color: #FFFFFF; }
+.rmodal__dial { font-family: fonts.$font-accent; font-size: 0.82rem; font-weight: 600; color: colors.$QS-DARK; }
 
 .rmodal__chevron { opacity: 0.4; transition: transform 0.2s ease; &.open { transform: rotate(180deg); opacity: 0.7; } }
 
@@ -663,7 +663,7 @@ $accent: colors.$OS-RED;
   width: 280px;
   max-height: 240px;
   overflow: hidden;
-  background: #000000;
+  background: colors.$QS-SURFACE;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.15);
@@ -676,10 +676,10 @@ $accent: colors.$OS-RED;
   width: 100%;
   box-sizing: border-box;
   padding: 10px 14px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.02);
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  color: colors.$OS-DARK;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: colors.$QS-DARK;
   font-family: fonts.$font-secondary;
   font-size: 0.84rem;
   outline: none;
@@ -711,19 +711,19 @@ $accent: colors.$OS-RED;
   &.separator { padding: 4px 10px; cursor: default; }
 }
 
-.rmodal__sep-line { display: block; height: 1px; width: 100%; background: rgba(255,255,255,0.07); }
+.rmodal__sep-line { display: block; height: 1px; width: 100%; background: rgba(0,0,0,0.05); }
 
 .rmodal__country-name {
   font-family: fonts.$font-secondary;
   font-size: 0.82rem;
-  color: #FFFFFF;
+  color: colors.$QS-DARK;
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.rmodal__country-dial { font-family: fonts.$font-accent; font-size: 0.75rem; color: #EEEEEE; flex-shrink: 0; }
+.rmodal__country-dial { font-family: fonts.$font-accent; font-size: 0.75rem; color: #6B7280; flex-shrink: 0; }
 
 .rmodal__phone-input {
   flex: 1;
@@ -734,10 +734,10 @@ $accent: colors.$OS-RED;
   padding: 11px 40px 11px 12px !important;
   font-family: fonts.$font-secondary;
   font-size: 0.92rem;
-  color: colors.$OS-DARK;
+  color: colors.$QS-DARK;
   outline: none !important;
   box-shadow: none !important;
-  &::placeholder { color: rgba(255, 255, 255, 0.35); }
+  &::placeholder { color: #9CA3AF; }
 }
 
 .rmodal__phone-status {
@@ -793,7 +793,7 @@ $accent: colors.$OS-RED;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #000000;
+  color: colors.$QS-SURFACE;
   background: $accent;
   border: none;
   border-radius: 12px;
@@ -899,17 +899,17 @@ $accent: colors.$OS-RED;
       box-shadow: inset 0 0 0 3px #ffffff;
     }
 
-    .rmodal__urgency-opt-text strong { color: #FFFFFF; }
+    .rmodal__urgency-opt-text strong { color: colors.$QS-DARK; }
   }
 }
 
 .rmodal__urgency-opt-dot {
   width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid #c5d3e3; background: #000000; flex-shrink: 0;
+  border: 2px solid rgba(0,0,0,0.15); background: colors.$QS-LIGHT; flex-shrink: 0;
   transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
 
   .rmodal__urgency-opt--sel & {
-    border-color: $accent; background: $accent; box-shadow: inset 0 0 0 3px #ffffff;
+    border-color: $accent; background: $accent; box-shadow: inset 0 0 0 3px colors.$QS-SURFACE;
   }
 }
 
@@ -918,7 +918,7 @@ $accent: colors.$OS-RED;
 
   strong {
     font-family: fonts.$font-interface; font-size: 0.88rem; font-weight: 700;
-    color: colors.$OS-DARK; line-height: 1.25;
+    color: colors.$QS-DARK; line-height: 1.25;
   }
 
   small { font-family: fonts.$font-secondary; font-size: 0.74rem; color: $text-muted; }

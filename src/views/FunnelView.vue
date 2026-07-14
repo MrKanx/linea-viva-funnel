@@ -18,7 +18,7 @@ onMounted(() => {
   sessionStorage.setItem('alu_page_entry', String(Date.now()))
   
   // Clean up any other bg
-  document.body.style.backgroundColor = '#000000'
+  document.body.style.backgroundColor = '#F9FAFB'
 })
 </script>
 
@@ -29,23 +29,36 @@ onMounted(() => {
       <!-- HEADER -->
       <header class="funnel__header">
         <div class="funnel__logo-wrap">
-          <span class="funnel__logo-text">STUDENTS<span class="funnel__logo-accent">2MADRID</span></span>
+          <span class="funnel__logo-text">LÍNEA<span class="funnel__logo-accent">VIVA</span></span>
         </div>
       </header>
 
       <!-- HERO -->
       <section class="funnel__hero">
         <h1 class="funnel__headline">
-          Toma el control absoluto de tu futuro académico en Europa con el <span class="funnel__headline-accent">Método Rumbo a España</span>
+          Construir o remodelar debería devolverte la ilusión, <span class="funnel__headline-accent">no quitarte la tranquilidad</span>
         </h1>
         
         <p class="funnel__hero-sub">
-          Descubre el paso a paso exacto para evitar el rechazo de tu visado, meses de parálisis burocrática y miles de euros perdidos. Tu única preocupación debe ser disfrutar de tu experiencia en Madrid.
+          Descubre cómo la metodología Línea Viva 360 transforma tu proyecto con un solo equipo que planifica, coordina y responde por todo el proceso. Tu única preocupación debe ser disfrutar el resultado.
         </p>
 
         <div class="funnel__content-grid">
+          <!-- Text/Bullets first -->
+          <div class="funnel__bullets-column">
+            <div class="funnel__bullets-box">
+              <p class="funnel__bullets-title">Nuestra Metodología en 3 Pasos:</p>
+              <ul class="funnel__bullets">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Planificación Integral (BIM):</strong> Detectamos y corregimos cualquier error antes de tocar una sola pared, evitando sobrecostos.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Organización y Control:</strong> No tienes que ser el coordinador de tu propia obra. Nosotros gestionamos todo.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Ejecución y Respaldo:</strong> Entregamos un proyecto bien hecho, con acabados de alto nivel y garantía total comprobada.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Cero Estrés:</strong> Olvídate del proceso fragmentado donde el diseñador y el constructor se culpan entre sí.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- VSL Column second -->
           <div class="funnel__vsl-column">
-            <!-- VSL Falso (Abre modal) -->
             <div class="funnel__vsl-wrap" @click="openModal">
               <div class="funnel__vsl-overlay">
                 <button class="funnel__play-btn" aria-label="Reproducir video">
@@ -53,28 +66,16 @@ onMounted(() => {
                 </button>
                 <span class="funnel__vsl-msg">Haz clic para ver el video gratis</span>
               </div>
-              <img src="https://fast.wistia.com/embed/medias/xr33vaq36h/swatch" class="funnel__vsl-thumb" alt="Video de entrenamiento" />
+              <img src="https://fast.wistia.com/embed/medias/qlg8athp0s/swatch" class="funnel__vsl-thumb" alt="Video de la metodología" />
             </div>
 
             <button class="funnel__cta" @click="openModal">
               <i class="fa-solid fa-video"></i>
-              VER ENTRENAMIENTO GRATIS
+              VER VIDEO GRATIS
             </button>
             <p class="funnel__guarantee">
               <i class="fa-solid fa-lock"></i> 100% gratuito · Sin compromiso · Cupos limitados
             </p>
-          </div>
-          
-          <div class="funnel__bullets-column">
-            <div class="funnel__bullets-box">
-              <p class="funnel__bullets-title">Nuestros 3 pilares inquebrantables:</p>
-              <ul class="funnel__bullets">
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Auditoría Documental:</strong> Revisión milimétrica de tus requisitos y seguro médico para evitar rechazos inmediatos en extranjería.</li>
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Ruta Crítica Anticipada:</strong> Coordinamos tus citas de TIE y empadronamiento desde que estás en tu país, no cuando llegas a España.</li>
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Blindaje Total:</strong> Organización de tu cuenta bancaria Santander y tarjeta de transporte, listas desde tu primer día.</li>
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Cero Sorpresas:</strong> Evita a los tramitadores informales que te cuestan meses de retraso y departamentos vacíos.</li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -82,22 +83,22 @@ onMounted(() => {
 
       <!-- STATS SECTION -->
       <section class="funnel__stats">
-        <p class="funnel__stats-eyebrow">RESULTADOS REALES DE ESTUDIANTES REALES</p>
+        <p class="funnel__stats-eyebrow">UN RESPALDO QUE SE DEMUESTRA CON RESULTADOS</p>
         <div class="funnel__stats-grid">
           <div class="funnel__stats-card">
-            <div class="funnel__stats-icon"><i class="fa-solid fa-passport"></i></div>
-            <h3 class="funnel__stats-number">+500</h3>
-            <p class="funnel__stats-text">visados estudiantiles aprobados con éxito garantizado</p>
-          </div>
-          <div class="funnel__stats-card">
-            <div class="funnel__stats-icon"><i class="fa-solid fa-university"></i></div>
+            <div class="funnel__stats-icon"><i class="fa-solid fa-house-circle-check"></i></div>
             <h3 class="funnel__stats-number">+100</h3>
-            <p class="funnel__stats-text">universidades y escuelas de negocios en convenio en Madrid</p>
+            <p class="funnel__stats-text">proyectos integrales entregados con acabados de primer nivel</p>
           </div>
           <div class="funnel__stats-card">
-            <div class="funnel__stats-icon"><i class="fa-solid fa-earth-americas"></i></div>
-            <h3 class="funnel__stats-number">7</h3>
-            <p class="funnel__stats-text">países de Latinoamérica desde donde viajan nuestros estudiantes</p>
+            <div class="funnel__stats-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+            <h3 class="funnel__stats-number">1</h3>
+            <p class="funnel__stats-text">solo equipo responsable de coordinar toda la obra</p>
+          </div>
+          <div class="funnel__stats-card">
+            <div class="funnel__stats-icon"><i class="fa-solid fa-star"></i></div>
+            <h3 class="funnel__stats-number">100%</h3>
+            <p class="funnel__stats-text">de garantía y respaldo total en cada entrega</p>
           </div>
         </div>
       </section>
@@ -111,11 +112,11 @@ onMounted(() => {
             </div>
           </div>
           <div class="funnel__authority-content">
-            <p class="funnel__authority-eyebrow">Directora y Especialista en Extranjería</p>
-            <h2 id="authority-heading" class="funnel__authority-name">Bianca Pimentel</h2>
-            <p class="funnel__authority-role">Fundadora del Método Rumbo a España — STUDENTS2MADRID</p>
+            <p class="funnel__authority-eyebrow">Fundadora y Directora de Proyectos</p>
+            <h2 id="authority-heading" class="funnel__authority-name">Liset Morán</h2>
+            <p class="funnel__authority-role">Fundadora de Línea Viva 360</p>
             <p class="funnel__authority-bio">
-              Con años de experiencia comprobada ayudando a familias y estudiantes latinoamericanos, transformando la incertidumbre de la migración en un proceso seguro. Mi meta no es simplemente llenarte un formulario; es que tú ya estés instalado, estudiando y disfrutando de tu nueva vida en España exactamente como lo tenías pensado. <strong>Un proceso legal bien guiado no es un gasto, es la mejor inversión para asegurar tu tranquilidad.</strong>
+              En Línea Viva sabemos que un buen proyecto no se demuestra con promesas, sino con resultados. El verdadero problema no es construir o remodelar, es hacerlo con un proceso fragmentado donde eres tú quien termina coordinándolo todo. <strong>Un proyecto bien hecho no solo transforma un espacio, también protege tu tiempo, tu inversión y la tranquilidad con la que disfrutas el resultado.</strong>
             </p>
           </div>
         </div>
@@ -124,18 +125,18 @@ onMounted(() => {
       <!-- FINAL CTA -->
       <section class="funnel__final-cta">
         <div class="funnel__logo-wrap funnel__logo-wrap--large">
-          <span class="funnel__logo-text">STUDENTS<span class="funnel__logo-accent">2MADRID</span>.</span>
+          <span class="funnel__logo-text">LÍNEA<span class="funnel__logo-accent">VIVA</span>.</span>
         </div>
         <h2 class="funnel__final-title">
-          ¿Listo para profesionalizar tu<br>
-          <span class="funnel__final-accent">transición internacional?</span>
+          ¿Listo para disfrutar el proceso de<br>
+          <span class="funnel__final-accent">transformar tus espacios?</span>
         </h2>
         <p class="funnel__final-sub">
-          Accede al entrenamiento gratuito donde te explicamos paso a paso nuestro Método Rumbo a España para blindar tu futuro académico y evitar rechazos.<br><br>
+          Accede al video gratuito donde te explicamos por qué nuestra metodología Línea Viva 360 es la opción más segura para proteger tu tiempo e inversión.<br><br>
         </p>
         <button class="funnel__cta funnel__cta--pulse" @click="openModal">
           <i class="fa-solid fa-video"></i>
-          ¡QUIERO VER EL ENTRENAMIENTO!
+          ¡QUIERO VER EL VIDEO!
         </button>
         <p class="funnel__guarantee">
           <i class="fa-solid fa-lock"></i> 100% gratuito · Sin compromiso
@@ -155,7 +156,7 @@ onMounted(() => {
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="funnel__footer-copy">© {{ new Date().getFullYear() }} STUDENTS2MADRID. Todos los derechos reservados.</p>
+      <p class="funnel__footer-copy">© {{ new Date().getFullYear() }} LÍNEA VIVA. Todos los derechos reservados.</p>
       <p class="funnel__footer-dev">Hecho por <a href="https://github.com/MrKanx" target="_blank" rel="noopener noreferrer">Kankox</a></p>
     </footer>
 
@@ -168,8 +169,8 @@ onMounted(() => {
 
 .funnel {
   min-height: 100vh;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: colors.$QS-LIGHT;
+  color: colors.$QS-DARK;
   font-family: fonts.$font-secondary;
   display: flex;
   flex-direction: column;
@@ -193,7 +194,7 @@ onMounted(() => {
   font-family: fonts.$font-principal;
   font-size: 1.8rem;
   font-weight: 900;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   letter-spacing: -0.5px;
 }
 
@@ -211,7 +212,7 @@ onMounted(() => {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin-bottom: 1rem;
   letter-spacing: -1px;
 }
@@ -222,7 +223,7 @@ onMounted(() => {
 
 .funnel__hero-sub {
   font-size: 1.1rem;
-  color: #a0aec0;
+  color: #4B5563; /* Tailwind gray-600 */
   max-width: 700px;
   margin: 0 auto 2.5rem;
   line-height: 1.5;
@@ -250,12 +251,12 @@ onMounted(() => {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background: #111;
+  background: colors.$QS-SURFACE;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
   transition: transform 0.2s, box-shadow 0.2s;
 
   &:hover {
@@ -291,7 +292,7 @@ onMounted(() => {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.8);
   backdrop-filter: blur(4px);
   border: 2px solid colors.$S2M-GOLD;
   color: colors.$S2M-GOLD;
@@ -320,7 +321,7 @@ onMounted(() => {
   margin-top: 2rem;
   width: 100%;
   background: colors.$S2M-GOLD;
-  color: #000000;
+  color: colors.$QS-SURFACE;
   font-family: fonts.$font-accent;
   font-size: 1.1rem;
   font-weight: 800;
@@ -367,7 +368,7 @@ onMounted(() => {
 .funnel__guarantee {
   margin-top: 1rem;
   font-size: 0.75rem;
-  color: #718096;
+  color: #6B7280;
   font-family: fonts.$font-interface;
   display: flex;
   align-items: center;
@@ -380,18 +381,19 @@ onMounted(() => {
 }
 
 .funnel__bullets-box {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 12px;
   padding: 2rem;
   height: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .funnel__bullets-title {
   font-family: fonts.$font-interface;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #cbd5e0;
+  color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0 0 1.5rem;
@@ -408,7 +410,7 @@ onMounted(() => {
   li {
     font-size: 1.05rem;
     line-height: 1.4;
-    color: #e2e8f0;
+    color: colors.$QS-DARK;
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -422,12 +424,11 @@ onMounted(() => {
   }
 }
 
-/* STATS */
 .funnel__stats {
   margin-top: 6rem;
   padding: 3rem 0;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .funnel__stats-eyebrow {
@@ -452,12 +453,13 @@ onMounted(() => {
 }
 
 .funnel__stats-card {
-  background: #111;
-  border: 1px solid #222;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 16px;
   padding: 2rem 1.5rem;
   text-align: center;
   transition: transform 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 
   &:hover {
     transform: translateY(-5px);
@@ -485,13 +487,13 @@ onMounted(() => {
   font-family: fonts.$font-principal;
   font-size: 2.5rem;
   font-weight: 900;
-  color: #fff;
+  color: colors.$QS-DARK;
   margin: 0 0 0.5rem;
 }
 
 .funnel__stats-text {
   font-size: 0.95rem;
-  color: #a0aec0;
+  color: #4B5563;
   margin: 0;
   line-height: 1.5;
 }
@@ -500,9 +502,10 @@ onMounted(() => {
 .funnel__authority {
   margin-top: 5rem;
   padding: 2.5rem;
-  background: #0A0A0A;
-  border: 1px solid #222222;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
 }
 
 .funnel__authority-inner {
@@ -520,9 +523,9 @@ onMounted(() => {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 3px solid #333;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  background: #111;
+  border: 3px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: colors.$QS-LIGHT;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,24 +548,24 @@ onMounted(() => {
 .funnel__authority-name {
   @include fonts.heading-font(800);
   font-size: 1.8rem;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0 0 0.25rem;
 }
 
 .funnel__authority-role {
   font-size: 0.9rem;
-  color: #CCCCCC;
+  color: #6B7280;
   margin: 0 0 1rem;
 }
 
 .funnel__authority-bio {
   font-size: 0.95rem;
-  color: #a0aec0;
+  color: #4B5563;
   line-height: 1.6;
   margin: 0;
 
   strong {
-    color: #ffffff;
+    color: colors.$QS-DARK;
   }
 }
 
@@ -588,7 +591,7 @@ onMounted(() => {
   font-family: fonts.$font-principal;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0 0 1.5rem;
   line-height: 1.1;
 }
@@ -599,7 +602,7 @@ onMounted(() => {
 
 .funnel__final-sub {
   font-size: 1.1rem;
-  color: #a0aec0;
+  color: #4B5563;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -609,12 +612,12 @@ onMounted(() => {
 .funnel__footer {
   width: 100%;
   padding: 2rem;
-  border-top: 1px solid #222;
+  border-top: 1px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  background: #000;
+  background: colors.$QS-SURFACE;
 }
 
 .funnel__footer-links {
@@ -623,7 +626,7 @@ onMounted(() => {
 
   a {
     font-size: 0.8rem;
-    color: #a0aec0;
+    color: #6B7280;
     text-decoration: none;
 
     &:hover {
@@ -634,17 +637,17 @@ onMounted(() => {
 
 .funnel__footer-copy {
   font-size: 0.75rem;
-  color: #718096;
+  color: #9CA3AF;
   margin: 0;
 }
 
 .funnel__footer-dev {
   font-size: 0.75rem;
-  color: #4a5568;
+  color: #9CA3AF;
   margin: 0;
   
   a {
-    color: #718096;
+    color: #6B7280;
     text-decoration: none;
     font-weight: bold;
     

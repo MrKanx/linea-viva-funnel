@@ -18,7 +18,7 @@ onMounted(() => {
 
       <main class="privacy-card__content">
         <p class="privacy-card__text">
-          En <strong>NOVAERA</strong>, valoramos su privacidad. Los datos personales que nos proporciona (como nombre, correo electrónico y número de teléfono) se recopilan con la única finalidad de gestionar sus solicitudes de contacto, programar su diagnóstico de infraestructura comercial y enviarle comunicaciones relacionadas con nuestros servicios.
+          En <strong>Línea Viva</strong>, valoramos su privacidad. Los datos personales que nos proporciona (como nombre, correo electrónico y número de teléfono) se recopilan con la única finalidad de gestionar sus solicitudes de contacto, programar su sesión de evaluación de proyecto y enviarle comunicaciones relacionadas con nuestros servicios.
         </p>
         <p class="privacy-card__text">
           Nos comprometemos a no vender, compartir ni transferir su información personal a terceros, excepto en los casos en que la ley así lo exija.
@@ -40,7 +40,7 @@ onMounted(() => {
 
 .privacy-page {
   min-height: 100vh;
-  background: #000000;
+  background: colors.$QS-LIGHT;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,11 +50,11 @@ onMounted(() => {
 .privacy-card {
   width: 100%;
   max-width: 580px;
-  background: #111111;
-  border: 1px solid #222222;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 480px) {
     padding: 1.75rem;
@@ -63,7 +63,7 @@ onMounted(() => {
   &__title {
     @include fonts.heading-font(800);
     font-size: 1.8rem;
-    color: #ffffff;
+    color: colors.$QS-DARK;
     text-align: center;
     margin: 0 0 1.5rem;
     letter-spacing: -0.02em;
@@ -83,11 +83,11 @@ onMounted(() => {
   &__text {
     font-size: 0.92rem;
     line-height: 1.6;
-    color: #cccccc;
+    color: #4B5563;
     margin: 0;
 
     strong {
-      color: #ffffff;
+      color: colors.$QS-DARK;
     }
   }
 
@@ -106,7 +106,7 @@ onMounted(() => {
   &__footer {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #222222;
+    border-top: 1px solid rgba(0,0,0,0.05);
     padding-top: 1.5rem;
   }
 
@@ -115,8 +115,8 @@ onMounted(() => {
     align-items: center;
     gap: 0.5rem;
     background: transparent;
-    border: 1px solid #444444;
-    color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: colors.$QS-DARK;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-family: fonts.$font-interface;
@@ -126,8 +126,8 @@ onMounted(() => {
     transition: background 0.2s, border-color 0.2s;
 
     &:hover {
-      background: #222222;
-      border-color: #666666;
+      background: rgba(0,0,0,0.05);
+      border-color: rgba(0,0,0,0.15);
     }
 
     i {

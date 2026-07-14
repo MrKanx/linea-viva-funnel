@@ -18,12 +18,13 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000; 
+  background: $QS-LIGHT; 
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a3143; /* Dark blue S2M */
+  background: $QS-SURFACE;
   border-radius: 5px;
+  border: 1px solid $QS-LIGHT;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffcc00; /* Gold S2M */
+  background: $QS-GOLD;
 }

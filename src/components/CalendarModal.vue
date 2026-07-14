@@ -47,42 +47,42 @@ const handleSubmit = async () => {
   const scheduleEventId = generateEventId('schedule')
 
   const nivelLabel: Record<string, string> = {
-    secundaria: 'Secundaria / Colegio',
-    bachiller: 'Bachiller',
-    universitario: 'Estudiante Universitario',
-    profesional: 'Profesional Graduado',
+    remodelacion: 'Remodelación',
+    construccion: 'Construcción desde cero',
+    comercial: 'Comercial / Oficinas',
+    otro: 'Otro',
   }
   const viajeLabel: Record<string, string> = {
-    meses3: 'Próximos 3 meses',
-    meses6: 'En 6 meses',
+    inmediato: 'Lo antes posible',
+    meses6: 'En 3 a 6 meses',
     ano1: 'En 1 año',
     explorando: 'Aún explorando opciones',
   }
   const presupuestoLabel: Record<string, string> = {
     si: 'Sí, dispongo del presupuesto',
-    financiamiento: 'Necesito financiamiento / beca',
-    no: 'No cuento con presupuesto',
+    financiamiento: 'Necesito financiamiento',
+    no: 'Aún no lo defino',
   }
 
   const etiquetas = [
-    'funnel-STUDENTS2MADRID',
+    'funnel-LINEA-VIVA',
     'step-2-cualificacion',
-    califica ? 'califica-STUDENTS2MADRID' : 'no-califica-STUDENTS2MADRID',
-    `nivel-${form.value.nivel}`,
-    `viaje-${form.value.viaje}`,
+    califica ? 'califica-LINEA-VIVA' : 'no-califica-LINEA-VIVA',
+    `tipo-${form.value.nivel}`,
+    `inicio-${form.value.viaje}`,
     `presupuesto-${form.value.presupuesto}`,
   ]
 
   const notas = `
 ━━━━━━━━━━━━━━━━━━━━━━━━
-STUDENTS2MADRID — Cualificación
+LÍNEA VIVA — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 👤 ${contact.nombre} ${contact.apellido}
 📧 ${contact.email}
 📱 ${contact.telefono}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-🎓 Nivel: ${nivelLabel[form.value.nivel] ?? form.value.nivel}
-✈️ Viaje: ${viajeLabel[form.value.viaje] ?? form.value.viaje}
+🏗️ Proyecto: ${nivelLabel[form.value.nivel] ?? form.value.nivel}
+⏱️ Inicio: ${viajeLabel[form.value.viaje] ?? form.value.viaje}
 💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💡 Desafío/Miedo: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -117,7 +117,7 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Falta presupuesto'}
 
   trackStage('cualificacion_completada', payload)
 
-  const webhookUrl = import.meta.env.VITE_WEBHOOK_CALIFICACION ?? 'https://services.leadconnectorhq.com/hooks/fEMLLNjtxgizyNARamWS/webhook-trigger/S2uzKeLAiW2owmXyUi17'
+  const webhookUrl = import.meta.env.VITE_WEBHOOK_CALIFICACION ?? 'https://services.leadconnectorhq.com/hooks/kRY63aQkg8qTWBUbwreY/webhook-trigger/U5u6toL5UVsd4tiFBL6q'
   await fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -173,13 +173,13 @@ watch(() => props.open, (v) => {
 
           <div class="cal-header">
             <div class="cal-header-icon" aria-hidden="true">
-              <i class="fa-solid fa-plane"></i>
+              <i class="fa-solid fa-hard-hat"></i>
             </div>
             <h2 id="cal-title" class="cal-title">
               Antes de agendar, cuéntanos sobre
-              <span class="cal-accent">tu viaje</span>
+              <span class="cal-accent">tu proyecto</span>
             </h2>
-            <p class="cal-subtitle">4 preguntas para preparar tu asesoría — 60 segundos.</p>
+            <p class="cal-subtitle">4 breves preguntas para preparar tu asesoría.</p>
           </div>
 
           <form class="cal-form" @submit.prevent="handleSubmit" novalidate>
@@ -188,14 +188,14 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.nivel }">
               <legend class="cal-legend">
                 <span class="cal-q-num">01</span>
-                ¿Cuál es tu nivel de estudios actual?
+                ¿Qué tipo de proyecto deseas realizar?
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'secundaria', label: 'Secundaria / Colegio' },
-                  { value: 'bachiller', label: 'Bachiller' },
-                  { value: 'universitario', label: 'Estudiante Universitario' },
-                  { value: 'profesional', label: 'Profesional Graduado' },
+                  { value: 'remodelacion', label: 'Remodelación residencial' },
+                  { value: 'construccion', label: 'Construcción desde cero' },
+                  { value: 'comercial', label: 'Proyecto Comercial / Oficinas' },
+                  { value: 'otro', label: 'Otro' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.nivel === opt.value }">
                   <input type="radio" :value="opt.value" v-model="form.nivel" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
@@ -209,12 +209,12 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.viaje }">
               <legend class="cal-legend">
                 <span class="cal-q-num">02</span>
-                ¿Para cuándo planeas tu viaje a España?
+                ¿Para cuándo planeas iniciar la obra o el proyecto?
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'meses3', label: 'Próximos 3 meses' },
-                  { value: 'meses6', label: 'En 6 meses' },
+                  { value: 'inmediato', label: 'Lo antes posible' },
+                  { value: 'meses6', label: 'En 3 a 6 meses' },
                   { value: 'ano1', label: 'En 1 año' },
                   { value: 'explorando', label: 'Aún explorando opciones' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.viaje === opt.value }">
@@ -236,8 +236,8 @@ watch(() => props.open, (v) => {
               <div class="cal-options">
                 <label v-for="opt in [
                   { value: 'si', label: 'Sí, dispongo del presupuesto', premium: true },
-                  { value: 'financiamiento', label: 'Necesito financiamiento / beca', premium: false },
-                  { value: 'no', label: 'No cuento con presupuesto', premium: false },
+                  { value: 'financiamiento', label: 'Necesito financiamiento', premium: false },
+                  { value: 'no', label: 'Aún no tengo un presupuesto definido', premium: false },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
@@ -257,12 +257,12 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && wordCount(form.reto) < 5 }">
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
-                ¿Cuál es tu principal desafío o miedo respecto a tu viaje?
+                ¿Cuál es tu principal desafío o miedo respecto a construir o remodelar?
               </legend>
               <textarea
                 v-model="form.reto"
                 class="cal-textarea"
-                placeholder="Ej: Tengo miedo a que rechacen mi visa y perder mi oportunidad de estudiar en la universidad..."
+                placeholder="Ej: Tengo miedo de que la obra se atrase, me cobren de más o los contratistas me queden mal..."
                 rows="4"
                 aria-describedby="q4-hint"
               ></textarea>
@@ -279,7 +279,7 @@ watch(() => props.open, (v) => {
               <input type="checkbox" v-model="form.consent" />
               <span class="cal-consent__box" aria-hidden="true" />
               <span class="cal-consent__text">
-                Acepto que STUDENTS2MADRID me contacte para brindarme mi asesoría gratuita.
+                Acepto que Línea Viva me contacte para agendar mi sesión de asesoría.
               </span>
             </label>
             <span v-if="touched && !form.consent" class="cal-error">Debes aceptar para continuar</span>
@@ -316,7 +316,7 @@ watch(() => props.open, (v) => {
   position: fixed;
   inset: 0;
   z-index: 900;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -326,15 +326,15 @@ watch(() => props.open, (v) => {
 }
 
 .cal-modal {
-  background: #000000;
+  background: colors.$QS-SURFACE;
   border-radius: 20px;
   width: 100%;
   max-width: 560px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-  border: 1px solid #222222;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .cal-close {
@@ -345,8 +345,8 @@ watch(() => props.open, (v) => {
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #111111;
-  color: #CCCCCC;
+  background: colors.$QS-LIGHT;
+  color: #9CA3AF;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -354,12 +354,12 @@ watch(() => props.open, (v) => {
   font-size: 0.9rem;
   transition: background 0.2s, color 0.2s;
   z-index: 1;
-  &:hover { background: #222222; color: colors.$S2M-GOLD; }
+  &:hover { background: rgba(0,0,0,0.05); color: colors.$S2M-GOLD; }
 }
 
 .cal-header {
   padding: 2rem 2rem 1.25rem;
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   text-align: center;
 }
 
@@ -378,7 +378,7 @@ watch(() => props.open, (v) => {
 .cal-title {
   @include fonts.heading-font(800);
   font-size: 1.45rem;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin: 0 0 0.5rem;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -388,7 +388,7 @@ watch(() => props.open, (v) => {
 
 .cal-subtitle {
   font-size: 0.86rem;
-  color: #CCCCCC;
+  color: #6B7280;
   margin: 0;
 }
 
@@ -427,7 +427,7 @@ watch(() => props.open, (v) => {
   font-family: fonts.$font-interface;
   font-size: 0.88rem;
   font-weight: 700;
-  color: #ffffff;
+  color: colors.$QS-DARK;
   margin-bottom: 0.75rem;
 
   &--budget {
@@ -459,7 +459,7 @@ watch(() => props.open, (v) => {
   height: 24px;
   border-radius: 6px;
   background: colors.$S2M-DARK-BLUE;
-  color: #ffffff;
+  color: colors.$QS-SURFACE;
   font-size: 0.72rem;
   font-weight: 800;
   flex-shrink: 0;
@@ -481,15 +481,15 @@ watch(() => props.open, (v) => {
   align-items: center;
   gap: 0.85rem;
   padding: 0.85rem 1.15rem;
-  border: 1.5px solid #333333;
+  border: 1.5px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #151515;
+  background: colors.$QS-LIGHT;
 
   &:hover { 
-    border-color: #555555; 
-    background: #1e1e1e; 
+    border-color: rgba(0,0,0,0.2); 
+    background: colors.$QS-SURFACE; 
     transform: translateY(-1px);
   }
 
@@ -502,7 +502,7 @@ watch(() => props.open, (v) => {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #555555;
+    border: 2px solid rgba(0,0,0,0.15);
     flex-shrink: 0;
     position: relative;
     transition: all 0.2s ease;
@@ -523,38 +523,38 @@ watch(() => props.open, (v) => {
 
   &__label {
     font-size: 0.92rem;
-    color: #DDDDDD;
+    color: #4B5563;
     font-weight: 500;
     transition: color 0.2s ease;
-    .cal-option.selected & { color: #FFFFFF; font-weight: 600; text-shadow: 0 0 1px rgba(255,255,255,0.3); }
+    .cal-option.selected & { color: colors.$QS-DARK; font-weight: 600; text-shadow: 0 0 1px rgba(255,255,255,0.3); }
   }
 }
 
 .cal-textarea {
   width: 100%;
-  border: 1.5px solid #333333;
+  border: 1.5px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   padding: 1rem 1.15rem;
   font-family: fonts.$font-secondary;
   font-size: 0.92rem;
-  color: #FFFFFF;
-  background: #151515;
+  color: colors.$QS-DARK;
+  background: colors.$QS-LIGHT;
   resize: vertical;
   outline: none;
   transition: all 0.2s ease;
   line-height: 1.55;
   box-sizing: border-box;
-  &::placeholder { color: rgba(255, 255, 255, 0.35); }
+  &::placeholder { color: #9CA3AF; }
   &:focus { 
     border-color: colors.$S2M-GOLD; 
-    background: #1a1a1a; 
+    background: colors.$QS-SURFACE; 
   }
 }
 
 .cal-hint {
   display: block;
   font-size: 0.76rem;
-  color: #EEEEEE;
+  color: #6B7280;
   margin-top: 0.35rem;
 }
 
@@ -577,7 +577,7 @@ watch(() => props.open, (v) => {
   &__box {
     width: 20px;
     height: 20px;
-    border: 2px solid #555555;
+    border: 2px solid rgba(0,0,0,0.15);
     border-radius: 6px;
     flex-shrink: 0;
     margin-top: 2px;
@@ -589,13 +589,13 @@ watch(() => props.open, (v) => {
     input:checked ~ & {
       background: colors.$S2M-GOLD;
       border-color: colors.$S2M-GOLD;
-      &::after { content: '✓'; color: #000; font-size: 0.8rem; font-weight: 900; }
+      &::after { content: '✓'; color: colors.$QS-SURFACE; font-size: 0.8rem; font-weight: 900; }
     }
   }
 
   &__text {
     font-size: 0.82rem;
-    color: #DDDDDD;
+    color: #4B5563;
     line-height: 1.5;
   }
 }
@@ -606,7 +606,7 @@ watch(() => props.open, (v) => {
   justify-content: center;
   gap: 0.6rem;
   background: colors.$S2M-GOLD;
-  color: #000000;
+  color: colors.$QS-SURFACE;
   border: none;
   border-radius: 12px;
   padding: 1rem 2rem;

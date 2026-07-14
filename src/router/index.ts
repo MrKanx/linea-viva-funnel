@@ -31,14 +31,14 @@ const router = createRouter({
       name: 'funnel',
       component: FunnelView,
       meta: {
-        title: 'STUDENTS2MADRID | Estudia en Madrid sin dejar tu futuro al azar',
+        title: 'Línea Viva | Construir o remodelar el espacio de tus sueños',
         description:
-          'Transformamos tu sueño de estudiar en Madrid en un camino seguro, organizado y sin incertidumbre. Asesoría estratégica gratuita.',
-        canonical: 'https://students2madrid.com/',
-        ogTitle: 'STUDENTS2MADRID | Estudia en Madrid sin dejar tu futuro al azar',
+          'Transformamos tu espacio con la metodología Línea Viva 360. Un solo equipo planifica, ejecuta y responde por tu proyecto completo.',
+        canonical: 'https://lineaviva.com/',
+        ogTitle: 'Línea Viva | Construir o remodelar el espacio de tus sueños',
         ogDescription:
-          'Te acompañamos desde la preparación documental hasta tu llegada a España con una metodología estratégica diseñada para reducir errores.',
-        ogUrl: 'https://students2madrid.com/',
+          'Transformamos tu espacio con la metodología Línea Viva 360. Un solo equipo planifica, ejecuta y responde por tu proyecto completo.',
+        ogUrl: 'https://lineaviva.com/',
       } satisfies RouteMeta,
     },
     {
@@ -46,12 +46,12 @@ const router = createRouter({
       name: 'video',
       component: VideoView,
       meta: {
-        title: 'Mira el video | NOVAERA — Paso 1 de 2',
-        description: 'Descubre cómo una infraestructura de alto valor aumenta tu autoridad comercial.',
-        canonical: 'https://novaera.ec/ver-video',
-        ogTitle: 'Mira el video | NOVAERA',
-        ogDescription: 'Ve el video y agenda tu diagnóstico comercial gratuito.',
-        ogUrl: 'https://novaera.ec/ver-video',
+        title: 'Mira el video | Línea Viva — Paso 1 de 2',
+        description: 'Descubre cómo construir o remodelar sin estrés con la metodología Línea Viva 360.',
+        canonical: 'https://lineaviva.com/ver-video',
+        ogTitle: 'Mira el video | Línea Viva',
+        ogDescription: 'Ve el video y agenda tu sesión con nuestro equipo.',
+        ogUrl: 'https://lineaviva.com/ver-video',
       } satisfies RouteMeta,
     },
     {
@@ -59,12 +59,12 @@ const router = createRouter({
       name: 'booking',
       component: BookingView,
       meta: {
-        title: 'Agenda tu Diagnóstico | NOVAERA — Paso 2 de 2',
-        description: 'Selecciona el día y hora para tu Diagnóstico de Infraestructura Comercial gratuito.',
-        canonical: 'https://novaera.ec/agendar',
-        ogTitle: 'Agenda tu Diagnóstico | NOVAERA',
-        ogDescription: 'Elige tu horario y reserva tu Diagnóstico Comercial.',
-        ogUrl: 'https://novaera.ec/agendar',
+        title: 'Agenda tu Sesión | Línea Viva — Paso 2 de 2',
+        description: 'Selecciona el día y hora para tu sesión de evaluación de proyecto.',
+        canonical: 'https://lineaviva.com/agendar',
+        ogTitle: 'Agenda tu Sesión | Línea Viva',
+        ogDescription: 'Elige tu horario y reserva tu sesión.',
+        ogUrl: 'https://lineaviva.com/agendar',
       } satisfies RouteMeta,
     },
     {
@@ -72,12 +72,12 @@ const router = createRouter({
       name: 'booked',
       component: BookedView,
       meta: {
-        title: 'Diagnóstico Confirmado | NOVAERA',
-        description: 'Tu diagnóstico comercial con NOVAERA está confirmado. Revisa tu correo.',
-        canonical: 'https://novaera.ec/cita-confirmada',
-        ogTitle: 'Diagnóstico Confirmado | NOVAERA',
-        ogDescription: 'Tu diagnóstico está reservado. Te contactaremos pronto.',
-        ogUrl: 'https://novaera.ec/cita-confirmada',
+        title: 'Sesión Confirmada | Línea Viva',
+        description: 'Tu sesión con Línea Viva está confirmada. Revisa tu correo.',
+        canonical: 'https://lineaviva.com/cita-confirmada',
+        ogTitle: 'Sesión Confirmada | Línea Viva',
+        ogDescription: 'Tu sesión está reservada. Te contactaremos pronto.',
+        ogUrl: 'https://lineaviva.com/cita-confirmada',
       } satisfies RouteMeta,
     },
     {
@@ -85,12 +85,12 @@ const router = createRouter({
       name: 'no-space',
       component: NoSpaceView,
       meta: {
-        title: 'Sin Cupos Disponibles | NOVAERA',
-        description: 'En este momento los cupos para diagnóstico comercial de NOVAERA están completos.',
-        canonical: 'https://novaera.ec/sin-espacio',
-        ogTitle: 'Sin Cupos Disponibles | NOVAERA',
-        ogDescription: 'Los cupos de diagnóstico están completos. Te avisaremos cuando haya disponibilidad.',
-        ogUrl: 'https://novaera.ec/sin-espacio',
+        title: 'Sin Cupos Disponibles | Línea Viva',
+        description: 'En este momento los cupos para proyectos de Línea Viva están completos.',
+        canonical: 'https://lineaviva.com/sin-espacio',
+        ogTitle: 'Sin Cupos Disponibles | Línea Viva',
+        ogDescription: 'Los cupos para nuevos proyectos están completos. Te avisaremos cuando haya disponibilidad.',
+        ogUrl: 'https://lineaviva.com/sin-espacio',
       } satisfies RouteMeta,
     },
     {
@@ -98,12 +98,12 @@ const router = createRouter({
       name: 'privacy-policy',
       component: PrivacyPolicyView,
       meta: {
-        title: 'Política de Privacidad | NOVAERA',
-        description: 'Política de privacidad de NOVAERA. Información sobre el tratamiento de datos personales.',
-        canonical: 'https://novaera.ec/politicas-privacidad',
-        ogTitle: 'Política de Privacidad | NOVAERA',
-        ogDescription: 'Política de privacidad de NOVAERA.',
-        ogUrl: 'https://novaera.ec/politicas-privacidad',
+        title: 'Política de Privacidad | Línea Viva',
+        description: 'Política de privacidad de Línea Viva. Información sobre el tratamiento de datos personales.',
+        canonical: 'https://lineaviva.com/politicas-privacidad',
+        ogTitle: 'Política de Privacidad | Línea Viva',
+        ogDescription: 'Política de privacidad de Línea Viva.',
+        ogUrl: 'https://lineaviva.com/politicas-privacidad',
       } satisfies RouteMeta,
     },
     {
@@ -111,12 +111,12 @@ const router = createRouter({
       name: 'legal-notice',
       component: LegalNoticeView,
       meta: {
-        title: 'Aviso Legal | NOVAERA',
-        description: 'Aviso legal de NOVAERA. Términos y condiciones de uso del sitio web.',
-        canonical: 'https://novaera.ec/aviso-legal',
-        ogTitle: 'Aviso Legal | NOVAERA',
-        ogDescription: 'Aviso legal de NOVAERA.',
-        ogUrl: 'https://novaera.ec/aviso-legal',
+        title: 'Aviso Legal | Línea Viva',
+        description: 'Aviso legal de Línea Viva. Términos y condiciones de uso del sitio web.',
+        canonical: 'https://lineaviva.com/aviso-legal',
+        ogTitle: 'Aviso Legal | Línea Viva',
+        ogDescription: 'Aviso legal de Línea Viva.',
+        ogUrl: 'https://lineaviva.com/aviso-legal',
       } satisfies RouteMeta,
     },
   ],
@@ -143,7 +143,7 @@ const setCanonical = (href: string) => {
 
 router.afterEach((to) => {
   const meta = to.meta
-  document.title = meta.title ?? 'NOVAERA'
+  document.title = meta.title ?? 'Línea Viva'
   setMeta('description', meta.description ?? '')
   setOgMeta('og:title', meta.ogTitle ?? meta.title ?? '')
   setOgMeta('og:description', meta.ogDescription ?? meta.description ?? '')
@@ -182,19 +182,19 @@ router.beforeEach((to, from, next) => {
   const disqFresh   = isFresh('os_disq_at',   DISQ_TTL_MS)
 
   if (routeName === 'booked') {
-    if (!bookedFresh) return next({ name: 'funnel' })
+    if (!bookedFresh && !import.meta.env.DEV) return next({ name: 'funnel' })
     return next()
   }
 
-  if (bookedFresh) {
+  if (bookedFresh && !import.meta.env.DEV) {
     return next({ name: 'booked' })
   }
 
-  if (disqFresh && ['booking', 'booked'].includes(routeName)) {
+  if (disqFresh && ['booking', 'booked'].includes(routeName) && !import.meta.env.DEV) {
     return next({ name: 'no-space' })
   }
 
-  if (routeName === 'no-space' && !disqFresh) {
+  if (routeName === 'no-space' && !disqFresh && !import.meta.env.DEV) {
     return next({ name: 'funnel' })
   }
 

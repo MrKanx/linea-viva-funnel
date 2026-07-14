@@ -175,7 +175,7 @@ async function submitS2() {
           source: 'ale-barreto-web',
           // Datos de cualificación (Step 2)
           '1. ¿Qué tipo de proyecto buscas?': s2.value.projectType,
-          '2. ¿Dispones de más de $1200 para este proyecto?': s2.value.budget === 'yes' ? 'Sí' : 'No',
+          '2. ¿Dispones de presupuesto integral?': s2.value.budget === 'yes' ? 'Sí' : 'No',
           '3. ¿Cuál es tu objetivo principal?': s2.value.objective,
           urgency: s2.value.urgency,
           message: s2.value.message.trim(),
@@ -208,14 +208,14 @@ const projectOpts = [
 ]
 
 const budgetOpts = [
-  { value: 'yes', label: 'Sí, dispongo de más de $1200' },
-  { value: 'no', label: 'No, mi presupuesto es menor' },
+  { value: 'yes', label: 'Sí, dispongo del presupuesto para una obra/remodelación integral' },
+  { value: 'no', label: 'No, busco la opción más económica' },
 ]
 
 const objectiveOpts = [
-  { value: 'Remodelación completa de espacios.', label: 'Remodelación completa de espacios.' },
-  { value: 'Diseño y fabricación de muebles a medida.', label: 'Diseño y fabricación de muebles a medida.' },
-  { value: 'Construcción de estructuras en madera (pérgolas, decks, etc.).', label: 'Construcción de estructuras en madera (pérgolas, decks, etc.).' },
+  { value: 'Tener un solo equipo que planifique y ejecute todo el proceso.', label: 'Tener un solo equipo que planifique y ejecute todo el proceso.' },
+  { value: 'Coordinar yo mismo con diferentes proveedores.', label: 'Coordinar yo mismo con diferentes proveedores (Diseñador, Constructor, etc).' },
+  { value: 'Busco acabados de alto nivel y tranquilidad durante la obra.', label: 'Busco acabados de alto nivel y tranquilidad durante la obra.' },
 ]
 
 const urgencyOpts = [
@@ -365,7 +365,7 @@ const urgencyOpts = [
         <!-- Q2: Presupuesto -->
         <div class="wf-question">
           <p class="wf-q-num">02</p>
-          <p class="wf-q-title">¿Dispones de un presupuesto de más de $1200 para este proyecto?</p>
+          <p class="wf-q-title">¿Dispones del presupuesto para una obra o remodelación integral?</p>
           <label
             v-for="opt in budgetOpts"
             :key="opt.value"

@@ -99,20 +99,19 @@ onUnmounted(() => {
       
       <!-- Header Section -->
       <div class="strategies__header">
-        <p class="strategies__subtitle">METODOLOGÍA 1M</p>
+        <p class="strategies__subtitle">METODOLOGÍA LÍNEA VIVA 360</p>
         <h2 class="strategies__title">
-          Ingeniería de Crecimiento al<br>
-          Estilo <span>Silicon Valley</span>
+          Un solo equipo,<br>
+          <span>Responsable de todo</span>
         </h2>
         <p class="strategies__header-desc">
-          No operamos con fe ni esperanza. Aplicamos el marco de trabajo <strong>Lean Startup</strong> para encontrar
-          tu oferta ganadora rápida y económicamente, y luego escalar con precisión matemática hacia las 7 cifras anuales.
+          El verdadero problema no es construir o remodelar. El problema es hacerlo con un proceso fragmentado donde el diseñador trabaja por un lado y el constructor por otro. Con <strong>Línea Viva 360</strong>, te devolvemos la tranquilidad.
         </p>
         
         <div class="strategies__header-cta">
           <button class="btn-header-contact" @click="scrollToContact">
-            <span>HABLAR CON UN ESTRATEGA</span>
-            <i class="fa-solid fa-rocket"></i>
+            <span>AGENDAR MI SESIÓN</span>
+            <i class="fa-solid fa-calendar-check"></i>
           </button>
         </div>
       </div>
@@ -123,42 +122,42 @@ onUnmounted(() => {
         <!-- Fase 1 -->
         <div class="step-card">
           <div class="step-card__number">01</div>
-          <h3 class="step-card__title">Diagnóstico<br>Data-Driven</h3>
+          <h3 class="step-card__title">Planificación<br>Integral</h3>
           <p class="step-card__desc">
-            Eliminamos las suposiciones y el "yo creo que funcionaría". Auditamos tus finanzas, histórico de ventas y fuga de capital para encontrar dónde estás perdiendo dinero ahora mismo.
+            Antes de tocar una sola pared, planificamos todo el proyecto en detalle usando principios BIM para detectar y corregir errores en físico, evitando demoliciones o sobrecostos.
           </p>
           <ul class="step-card__features">
-            <li><i class="fa-solid fa-check"></i> Auditoría de Facturación</li>
-            <li><i class="fa-solid fa-check"></i> Mapeo de Fugas de Capital</li>
-            <li><i class="fa-solid fa-check"></i> Proyección Real de Rentabilidad</li>
+            <li><i class="fa-solid fa-check"></i> Diseño Coordinado</li>
+            <li><i class="fa-solid fa-check"></i> Cero Improvisaciones</li>
+            <li><i class="fa-solid fa-check"></i> Presupuesto Claro</li>
           </ul>
         </div>
 
         <!-- Fase 2 -->
         <div class="step-card">
           <div class="step-card__number">02</div>
-          <h3 class="step-card__title">Lean Startup<br>Framework</h3>
+          <h3 class="step-card__title">Organización<br>y Control</h3>
           <p class="step-card__desc">
-            Construir, Medir, Aprender. Lanzamos experimentos ágiles en Meta Ads (MVP) para validar ofertas con tus clientes reales sin quemar presupuesto. Encontramos el Product-Market Fit.
+            Un solo equipo se encarga de coordinar la obra, controlar tiempos, gestionar presupuesto y asegurar los acabados, para que no tengas que ser el coordinador de tu propia obra.
           </p>
           <ul class="step-card__features">
-            <li><i class="fa-solid fa-check"></i> Pruebas A/B Omnicanal</li>
-            <li><i class="fa-solid fa-check"></i> Iteración Rápida de Mensajes</li>
-            <li><i class="fa-solid fa-check"></i> Optimización de CPA en Tiempo Real</li>
+            <li><i class="fa-solid fa-check"></i> Un Solo Interlocutor</li>
+            <li><i class="fa-solid fa-check"></i> Tiempos Controlados</li>
+            <li><i class="fa-solid fa-check"></i> Tranquilidad Total</li>
           </ul>
         </div>
 
         <!-- Fase 3 -->
         <div class="step-card">
           <div class="step-card__number">03</div>
-          <h3 class="step-card__title">Escalamiento<br>Agresivo</h3>
+          <h3 class="step-card__title">Ejecución y<br>Garantía</h3>
           <p class="step-card__desc">
-            Una vez que validamos el embudo y confirmamos el ROAS (Retorno de Inversión), inyectamos capital agresivamente. Construimos sistemas de adquisición predecibles hacia el $1M.
+            Llevamos el proyecto a la realidad cuidando cada detalle. Y si aparece algo, lo corregimos. Entregamos un proyecto bien hecho, no solo terminado, y con respaldo real.
           </p>
           <ul class="step-card__features">
-            <li><i class="fa-solid fa-check"></i> Sistemas Automatizados</li>
-            <li><i class="fa-solid fa-check"></i> Retargeting Avanzado</li>
-            <li><i class="fa-solid fa-check"></i> Crecimiento Exponencial Seguro</li>
+            <li><i class="fa-solid fa-check"></i> Ejecución Impecable</li>
+            <li><i class="fa-solid fa-check"></i> Acabados de Alto Nivel</li>
+            <li><i class="fa-solid fa-check"></i> Respaldo y Garantía</li>
           </ul>
         </div>
 
@@ -168,11 +167,11 @@ onUnmounted(() => {
       <div class="strategies__footer">
         <div class="cta-banner">
           <div class="cta-banner__content">
-            <h3 class="cta-banner__title">¿Listo para escalar al siguiente nivel?</h3>
-            <p class="cta-banner__desc">Implementa el marco de trabajo Lean Startup en tu empresa hoy mismo.</p>
+            <h3 class="cta-banner__title">¿Listo para construir o remodelar sin complicaciones?</h3>
+            <p class="cta-banner__desc">Agenda tu sesión y descubre cómo Línea Viva 360 puede hacer tu proyecto realidad.</p>
           </div>
           <button class="btn-primary-massive" @click="scrollToContact">
-            <span>IMPLEMENTAR SISTEMA</span>
+            <span>EMPEZAR MI PROYECTO</span>
             <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>

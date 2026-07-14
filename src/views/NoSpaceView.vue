@@ -29,7 +29,7 @@ onMounted(() => {
   <div class="nospace">
 
     <header class="nospace__topbar">
-      <img src="@/assets/logos/logo.png" class="nospace__logo-img" alt="NOVAERA Logo" />
+      <span class="nospace__logo-text">LÍNEA<span class="nospace__logo-accent">VIVA</span></span>
     </header>
 
     <main class="nospace__main">
@@ -49,16 +49,16 @@ onMounted(() => {
           <i class="fa-solid fa-calendar-xmark nospace__icon"></i>
         </div>
 
-        <h1 class="nospace__title">Cupos completos para diagnóstico comercial</h1>
+        <h1 class="nospace__title">Cupos completos para sesiones iniciales</h1>
 
         <p class="nospace__body">
-          Nuestro equipo de ingenieros senior tiene la capacidad limitada para mantener la calidad
-          de ejecución que nos distingue. En este momento los <strong>5 cupos mensuales</strong>
-          de NOVAERA están completos.
+          Nuestro equipo de arquitectura y diseño tiene una capacidad limitada para mantener la calidad
+          de ejecución que nos distingue. En este momento los <strong>cupos mensuales</strong>
+          de Línea Viva están completos.
         </p>
 
         <p class="nospace__body">
-          Cuando se libere un espacio, podrás agendar tu Diagnóstico de Infraestructura Comercial
+          Cuando se libere un espacio, podrás agendar tu sesión de evaluación de proyecto
           sin costo.
         </p>
 
@@ -66,16 +66,14 @@ onMounted(() => {
 
         <h2 class="nospace__subtitle">Mientras tanto</h2>
         <p class="nospace__body">
-          Mientras esperas, te recomendamos preparar tus planos estructurales,
-          fotografías de tus fachadas actuales y cualquier duda técnica que
-          quieras resolver en tu sesión con Raúl.
+          Mientras esperas, te recomendamos preparar cualquier duda técnica que
+          quieras resolver en tu sesión con nuestro equipo para tu futura remodelación o construcción.
         </p>
       </div>
 
       <p class="nospace__footer-note">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        NOVAERA trabaja exclusivamente con corporaciones multinacionales e industrias
-        consolidadas. No atendemos proyectos residenciales ni solicitudes enfocadas en competir por precio.
+        Línea Viva asume un número limitado de proyectos integrales para asegurar el mejor resultado y respaldo. Te notificaremos en cuanto haya disponibilidad.
       </p>
 
     </main>
@@ -85,7 +83,7 @@ onMounted(() => {
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="nospace__footer-copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
+      <p class="nospace__footer-copy">© {{ new Date().getFullYear() }} LÍNEA VIVA. Todos los derechos reservados.</p>
     </footer>
 
   </div>
@@ -97,15 +95,15 @@ onMounted(() => {
 
 .nospace {
   min-height: 100vh;
-  background: #000000;
-  color: colors.$OS-DARK;
+  background: colors.$QS-LIGHT;
+  color: colors.$QS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .nospace__topbar {
-  background: #000000;
-  border-bottom: 1px solid #222222;
+  background: colors.$QS-LIGHT;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -115,16 +113,17 @@ onMounted(() => {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.nospace__logo-img {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
+.nospace__logo-text {
   font-family: fonts.$font-principal;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  color: colors.$OS-NAVY;
+  letter-spacing: -0.5px;
+  color: colors.$QS-DARK;
   margin: 0;
+}
+
+.nospace__logo-accent {
+  color: colors.$S2M-GOLD;
 }
 
 .nospace__main {
@@ -155,12 +154,12 @@ onMounted(() => {
 }
 
 .nospace__card {
-  background: #111111;
-  border: 1px solid #222222;
+  background: colors.$QS-SURFACE;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .nospace__icon-wrap {
@@ -189,12 +188,12 @@ onMounted(() => {
 
 .nospace__body {
   font-size: 0.92rem;
-  color: #FFFFFF;
+  color: #4B5563;
   line-height: 1.65;
   margin: 0 0 1rem;
 
   &:last-of-type { margin-bottom: 0; }
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+  strong { color: colors.$QS-DARK; font-weight: 700; }
 }
 
 .nospace__subtitle {
@@ -217,24 +216,24 @@ onMounted(() => {
   gap: 0.5rem;
   align-items: flex-start;
   font-size: 0.76rem;
-  color: #EEEEEE;
+  color: #6B7280;
   line-height: 1.55;
   margin: 0;
   max-width: 420px;
   text-align: left;
-  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #EEEEEE; }
+  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #6B7280; }
 }
 
 .nospace__footer {
   padding: 1.5rem;
-  border-top: 1px solid #222222;
+  border-top: 1px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
+  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #6B7280; text-decoration: none; &:hover { color: colors.$S2M-GOLD; } } }
+  &-copy { font-size: 0.72rem; color: #9CA3AF; margin: 0; }
 }
 </style>

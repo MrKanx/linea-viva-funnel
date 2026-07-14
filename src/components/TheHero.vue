@@ -35,27 +35,21 @@ const stats = [
   { number: '24/7', label: 'Asesoría Técnica' }
 ]
 
-// Beneficios clave
 const benefits = [
   {
-    icon: 'fa-solid fa-tree',
-    title: 'Madera de Calidad',
-    description: 'Seleccionamos las mejores piezas para garantizar durabilidad y estética superior.'
+    icon: 'fa-solid fa-compass-drafting',
+    title: '1. Planificación (BIM)',
+    description: 'Entendemos y planificamos todo en detalle antes de tocar una sola pared, evitando sobrecostos.'
   },
   {
-    icon: 'fa-solid fa-couch',
-    title: 'Diseño a Medida',
-    description: 'Creamos espacios únicos que reflejan tu estilo, desde casas hasta oficinas.'
+    icon: 'fa-solid fa-users-gear',
+    title: '2. Organización y Control',
+    description: 'Un solo equipo responsable de coordinar la obra, el presupuesto y los acabados. Cero estrés para ti.'
   },
   {
-    icon: 'fa-solid fa-hammer',
-    title: 'Mano de Obra Experta',
-    description: 'Artesanos especializados con años de trayectoria en el manejo de la madera.'
-  },
-  {
-    icon: 'fa-solid fa-shield-halved',
-    title: 'Garantía Total',
-    description: 'Respaldamos cada proyecto con una garantía de calidad inigualable.'
+    icon: 'fa-solid fa-handshake-angle',
+    title: '3. Ejecución con Respaldo',
+    description: 'Llevamos el proyecto a la realidad con garantía total incluso después de la entrega final.'
   }
 ]
 
@@ -168,7 +162,7 @@ const { open: openContactModal } = useContactModal()
           <!-- Logo Textual Sutil (Se oculta al hacer zoom) -->
           <div class="cube-logo">
             <svg viewBox="0 0 350 100" class="cube-logo__svg">
-              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="42" font-weight="900" letter-spacing="2">ALE BARRETO</text>
+              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="42" font-weight="900" letter-spacing="2">LÍNEA VIVA</text>
             </svg>
           </div>
         </div>
@@ -194,12 +188,12 @@ const { open: openContactModal } = useContactModal()
         <div class="track-panel panel-intro">
           <div class="panel-intro__content">
             <h1 class="hero-huge__subtitle">
-              Transformamos tus espacios con la calidez y<br/>
-              <strong>Elegancia de la Madera de Alta Gama</strong>
+              Construir o remodelar debería devolverte la ilusión,<br/>
+              <strong>No quitarte la tranquilidad.</strong>
             </h1>
             <p class="hero-huge__desc">
-              Diseño y construcción experta para hogares y oficinas.<br/>
-              Calidad artesanal con visión contemporánea.
+              Con la metodología Línea Viva 360, un solo equipo planifica, coordina y<br/>
+              responde por todo tu proyecto desde la primera idea hasta la entrega final.
             </p>
 
             <div class="hero-huge__cta">

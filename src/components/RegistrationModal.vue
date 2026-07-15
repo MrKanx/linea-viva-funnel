@@ -252,6 +252,10 @@ const handleSubmit = async () => {
     telefono: parsedPhoneE164.value,
     timestamp: Date.now(),
   }))
+
+  if (form.value.urgencia !== 'inmediato') {
+    localStorage.setItem('os_disq_at', Date.now().toString())
+  }
   ;(window as any).fbq?.('track', 'CompleteRegistration', {
     content_name: 'registro-inicial',
     value: 1,

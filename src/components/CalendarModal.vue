@@ -33,7 +33,7 @@ const isValid = () =>
   form.value.consent
 
 const qualifies = () => {
-  if (form.value.presupuesto === 'no') return false
+  if (form.value.presupuesto === 'menos8k') return false
   return true
 }
 
@@ -53,15 +53,15 @@ const handleSubmit = async () => {
     otro: 'Otro',
   }
   const viajeLabel: Record<string, string> = {
-    inmediato: 'Lo antes posible',
-    meses6: 'En 3 a 6 meses',
-    ano1: 'En 1 año',
-    explorando: 'Aún explorando opciones',
+    delegar: 'Delegar todo a un equipo responsable',
+    barato: 'Encontrar la opción más económica',
+    coordinar: 'Coordinar yo mismo a los contratistas',
+    solo_diseno: 'Solo necesito el diseño',
   }
   const presupuestoLabel: Record<string, string> = {
-    si: 'Sí, dispongo del presupuesto',
-    financiamiento: 'Necesito financiamiento',
-    no: 'Aún no lo defino',
+    mas15k: 'Más de $15,000',
+    entre8k15k: 'Entre $8,000 y $15,000',
+    menos8k: 'Menos de $8,000',
   }
 
   const etiquetas = [
@@ -82,7 +82,7 @@ LÍNEA VIVA — Cualificación
 📱 ${contact.telefono}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 🏗️ Proyecto: ${nivelLabel[form.value.nivel] ?? form.value.nivel}
-⏱️ Inicio: ${viajeLabel[form.value.viaje] ?? form.value.viaje}
+🎯 Prioridad: ${viajeLabel[form.value.viaje] ?? form.value.viaje}
 💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💡 Desafío/Miedo: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -205,18 +205,18 @@ watch(() => props.open, (v) => {
               <span v-if="touched && !form.nivel" class="cal-error">Selecciona una opción</span>
             </fieldset>
 
-            <!-- Q2 — Viaje -->
+            <!-- Q2 — Prioridad -->
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.viaje }">
               <legend class="cal-legend">
                 <span class="cal-q-num">02</span>
-                ¿Para cuándo planeas iniciar la obra o el proyecto?
+                ¿Cuál es tu principal prioridad al realizar este proyecto?
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'inmediato', label: 'Lo antes posible' },
-                  { value: 'meses6', label: 'En 3 a 6 meses' },
-                  { value: 'ano1', label: 'En 1 año' },
-                  { value: 'explorando', label: 'Aún explorando opciones' },
+                  { value: 'delegar', label: 'Delegar todo a un equipo responsable' },
+                  { value: 'barato', label: 'Encontrar la opción más económica' },
+                  { value: 'coordinar', label: 'Coordinar yo mismo a los contratistas' },
+                  { value: 'solo_diseno', label: 'Solo necesito el diseño' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.viaje === opt.value }">
                   <input type="radio" :value="opt.value" v-model="form.viaje" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
@@ -227,7 +227,7 @@ watch(() => props.open, (v) => {
             </fieldset>
 
             <!-- Q3 — Presupuesto -->
-            <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'no' }">
+            <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'menos8k' }">
               <legend class="cal-legend cal-legend--budget">
                 <span class="cal-q-num cal-q-num--budget">03</span>
                 <span>¿Cuentas con el presupuesto necesario para tu proceso?</span>
@@ -235,13 +235,13 @@ watch(() => props.open, (v) => {
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'si', label: 'Sí, dispongo del presupuesto', premium: true },
-                  { value: 'financiamiento', label: 'Necesito financiamiento', premium: false },
-                  { value: 'no', label: 'Aún no tengo un presupuesto definido', premium: false },
+                  { value: 'mas15k', label: 'Más de $15,000', premium: true },
+                  { value: 'entre8k15k', label: 'Entre $8,000 y $15,000', premium: true },
+                  { value: 'menos8k', label: 'Menos de $8,000', premium: false },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
-                  'cal-option--low': opt.value === 'no' && form.presupuesto === 'no',
+                  'cal-option--low': opt.value === 'menos8k' && form.presupuesto === 'menos8k',
                   'cal-option--premium-hover': opt.premium && form.presupuesto !== opt.value,
                 }">
                   <input type="radio" :value="opt.value" v-model="form.presupuesto" hidden />

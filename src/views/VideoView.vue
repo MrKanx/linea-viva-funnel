@@ -53,7 +53,8 @@ const submitCapture = async () => {
   startTimer()
 }
 
-const COUNTDOWN_SECONDS = 120
+const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || import.meta.env.DEV
+const COUNTDOWN_SECONDS = isDev ? 3 : 120
 const secondsLeft = ref(COUNTDOWN_SECONDS)
 const ctaUnlocked = ref(false)
 let timer: ReturnType<typeof setInterval> | null = null

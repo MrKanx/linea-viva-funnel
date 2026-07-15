@@ -49,7 +49,7 @@ onMounted(() => {
             <div class="funnel__bullets-box">
               <p class="funnel__bullets-title">Nuestra Metodología en 3 Pasos:</p>
               <ul class="funnel__bullets">
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Planificación Integral (BIM):</strong> Detectamos y corregimos cualquier error antes de tocar una sola pared, evitando sobrecostos.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Planificación con principios BIM:</strong> Detectamos y corregimos cualquier error antes de tocar una sola pared, evitando sobrecostos.</li>
                 <li><i class="fa-solid fa-circle-check"></i> <strong>Organización y Control:</strong> No tienes que ser el coordinador de tu propia obra. Nosotros gestionamos todo.</li>
                 <li><i class="fa-solid fa-circle-check"></i> <strong>Ejecución y Respaldo:</strong> Entregamos un proyecto bien hecho, con acabados de alto nivel y garantía total comprobada.</li>
                 <li><i class="fa-solid fa-circle-check"></i> <strong>Cero Estrés:</strong> Olvídate del proceso fragmentado donde el diseñador y el constructor se culpan entre sí.</li>
@@ -108,12 +108,12 @@ onMounted(() => {
         <div class="funnel__authority-inner">
           <div class="funnel__authority-photo-wrap">
             <div class="funnel__authority-avatar" aria-hidden="true">
-              <i class="fa-solid fa-user-tie"></i>
+              <img src="https://res.cloudinary.com/ztkfkpit/image/upload/v1784128690/IMG_8741_pqod1p.png" alt="Lissette Moran" />
             </div>
           </div>
           <div class="funnel__authority-content">
             <p class="funnel__authority-eyebrow">Fundadora y Directora de Proyectos</p>
-            <h2 id="authority-heading" class="funnel__authority-name">Liset Morán</h2>
+            <h2 id="authority-heading" class="funnel__authority-name">Lissette Moran</h2>
             <p class="funnel__authority-role">Fundadora de Línea Viva 360</p>
             <p class="funnel__authority-bio">
               En Línea Viva sabemos que un buen proyecto no se demuestra con promesas, sino con resultados. El verdadero problema no es construir o remodelar, es hacerlo con un proceso fragmentado donde eres tú quien termina coordinándolo todo. <strong>Un proyecto bien hecho no solo transforma un espacio, también protege tu tiempo, tu inversión y la tranquilidad con la que disfrutas el resultado.</strong>
@@ -529,7 +529,14 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
   i {
     color: colors.$S2M-GOLD;
     font-size: 2.5rem;

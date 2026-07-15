@@ -217,6 +217,7 @@ const handleSubmit = async () => {
     pais: selectedCountry.value.name,
     urgencia: form.value.urgencia,
     urgenciaLabel: form.value.urgencia ? URGENCY_LABEL[form.value.urgencia] : '',
+    cualifican: form.value.urgencia === 'inmediato',
     paso: '1-registro-inicial',
     etiquetas: tags.join(', '),
     tags,

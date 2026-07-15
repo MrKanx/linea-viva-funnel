@@ -122,7 +122,7 @@ onUnmounted(() => {
         <!-- Fase 1 -->
         <div class="step-card">
           <div class="step-card__number">01</div>
-          <h3 class="step-card__title">Planificación<br>Integral</h3>
+          <h3 class="step-card__title">Planificación<br>con principios BIM</h3>
           <p class="step-card__desc">
             Antes de tocar una sola pared, planificamos todo el proyecto en detalle usando principios BIM para detectar y corregir errores en físico, evitando demoliciones o sobrecostos.
           </p>
